@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import pymysql
-pymysql.version_info = (1, 4, 2, "final", 0)
-pymysql.install_as_MySQLdb()
+# import pymysql
+# pymysql.version_info = (1, 4, 2, "final", 0)
+# pymysql.install_as_MySQLdb()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*#+8a3@v&#45a*4d-3r8hefs##lqeqod7e4!)62_erh27)=cb&'
 DEBUG = True
@@ -60,10 +60,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'PlacementTracking.wsgi.application'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'place_track',
-        'USER':'root',
-        'PASSWORD':'root'
+#         'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'place_track',
+        'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
+#         'USER':'root',
+#         'PASSWORD':'root'
     }
 }
 AUTH_PASSWORD_VALIDATORS = [
