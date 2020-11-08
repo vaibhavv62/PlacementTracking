@@ -1,0 +1,24 @@
+{% extends "student_register/base.html" %}
+
+{% block content %}
+    {% for stu in user %}
+        {{ stu.branch }}<hr>
+        {{ stu.aadhar_no }}<hr>
+        {{ stu.AddOnCourse1 }}<hr>
+        {{ stu.AddOnCourse2 }}<hr>
+        {{ stu.certification1 }}<hr>
+        {{ stu.certification2 }}<hr>
+        {{ stu.clg }}<hr>
+        {{ stu.clg_email }}<hr>
+        {{ stu.dob }}<hr>
+        {{ stu.fname }}<hr>
+        {{ stu.mname }}<hr>
+        {{ stu.lname }}<hr>
+        {{ stu.gender }}<hr>
+        {{ stu.mono1 }}<hr>
+        {{ stu.mono2 }}<hr>
+        {{ stu.personal_email }}<hr>
+        {{ stu.xth_marks_obtained }}<hr>
+    {% endfor %}
+    studentlist.html
+{% endblock content %}

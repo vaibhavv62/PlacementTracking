@@ -1,0 +1,70 @@
+{% extends "student_register/layout.html" %}
+
+    {% block title %}
+        <title>Student Profile</title>
+    {% endblock %}
+
+    {% block css %}
+        <style>
+            #cssTable th,td
+            {
+                text-align: center;
+                vertical-align: middle;
+
+            }
+        </style>
+    {% endblock %}
+
+
+    {% block body %}
+        <div class="limiter">
+            <div class="container-login100" style="background-image: url('/static/images/mmcoen.jpg');">
+                <div class="wrap-login100" style="width:100%;">
+
+                    <span class="login100-form-title p-b-34 p-t-27">
+                            Full Profile
+                    </span>
+                    <table class="table" border="1px" width="100%" id="cssTable">
+{#                        <thead align="center">#}
+{#                            <th>PRN</th>#}
+{#                            <th>Name</th>#}
+{#                            <th>Branch</th>#}
+{#                            <th>College Email</th>#}
+{#                            <th>Mobile Number</th>#}
+{#                        </thead>#}
+{#                        {% for stu in students %}#}
+                        <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">Parameter</th>
+                              <th scope="col">Value</th>
+                            </tr>
+                        </thead>
+                        {% for k,v in stu.items %}
+                            <tr>
+                                <td>{{ k }}</td>
+                                <td>{{ v }}</td>
+                            </tr>
+{#                            {{ k }}-{{ v }}<br>#}
+                        {% endfor %}
+{#                            {{ stu }}#}
+{#                            <tr>#}
+{#                                <td>PRN Number:</td>#}
+{#                                <td>{{ stu.prn }}</td>#}
+{#                            </tr>#}
+{#                            <tr>#}
+{#                                <td>{{ stu.fname }} {{ stu.lname }}</td>#}
+{#                                <td>{{ stu.branch }}</td>#}
+{#                                <td>{{ stu.clg_email }}</td>#}
+{#                                <td>{{ stu.mono1 }}</td>#}
+{#                            </tr>#}
+{#                        {% endfor %}#}
+                    </table>
+
+                </div>
+		    </div>
+	    </div>
+
+
+	<div id="dropDownSelect1"></div>
+    {% endblock %}
+

@@ -1,0 +1,70 @@
+{% extends "student_register/layout.html" %}
+
+    {% block title %}
+        <title>All Jobs</title>
+    {% endblock %}
+
+    {% block css %}
+        <style>
+            #cssTable th,td
+            {
+                text-align: center;
+                vertical-align: middle;
+
+            }
+        </style>
+    {% endblock %}
+
+
+    {% block body %}
+        <div class="limiter">
+            <div class="container-login100" style="background-image: url('/static/images/mmcoen.jpg');">
+                <div class="wrap-login100" style="width:100%;">
+                    <span class="login100-form-title p-b-34 p-t-27">
+                            Jobs Posted by TPO
+                    </span>
+                    <table border="1" width="100%" id="cssTable">
+                        <thead>
+                            <th>Name of the Organization</th>
+                            <th>Job Designation (Position)</th>
+                            <th>Job Working Location</th>
+                            <th>CTC Offered (in LPA)</th>
+{#                            <th>Min. xth_percentage</th>#}
+{#                            <th>Min. xiith_percentage</th>#}
+                            <th>Minimum Engg. CGPA</th>
+                            <th>Max. no of live kt</th>
+                            <th>Max. no of year gap</th>
+                            <th>Last Date to Apply</th>
+                            <th>&nbsp;&nbsp;Registration Link&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        </thead>
+                        {% for job in jobs %}
+                    {{ current_date }}{{ job.date_of_campus }}
+                            <tr>
+                                <td>{{ job.company }}</td>
+                                <td>{{ job.job_pos }}</td>
+                                <td>{{ job.job_loc }}</td>
+                                <td>{{ job.ctc_offered }}</td>
+                                <td>{{ job.engg_cgpa }}</td>
+                                <td>{{ job.no_of_live_kt }}</td>
+                                <td>{{ job.no_of_yg }}</td>
+                                <td>{{ job.date_of_campus }}</td>
+{#                                <td>{{ job.reg_link }} </a></td>#}
+                                <td>
+                                    <span style=" background: springgreen; border-radius: 5px; padding: 0px 5px 0px 5px">
+                                        <a href="//{{ job.reg_link }}/">
+                                            <button>Apply Now!</button>
+                                        </a>
+                                    </span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+
+                </div>
+		    </div>
+	    </div>
+
+
+
+    {% endblock %}
+

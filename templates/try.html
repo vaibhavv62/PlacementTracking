@@ -1,0 +1,18 @@
+<html>
+<body>
+<form action="javascript:calc()">
+Input: <input type="text" id="input"/><br />
+Percent: <input type="text" id="percent" value="3"/>%<br />
+Output: <input type="text" id="output"/><br />
+<input type="submit" />
+</form>
+</body>
+<script>
+function calc() {
+  var i = document.getElementById("input").value;
+  var p = document.getElementById("percent").value;
+  var o = (i/100) * p;
+  document.getElementById("output").value = o;
+}
+</script>
+</html>

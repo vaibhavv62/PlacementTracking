@@ -1,0 +1,380 @@
+{% extends "student_register/layout.html" %}
+
+{% block title %}
+    <title>Register- Academic Details2</title>
+{% endblock %}
+
+{% block js %}
+        <script>
+            function calc_fe1cgpa()
+            {
+                var tot_credits_obtained = document.getElementById("fe1_tot_credits_obtained").value;
+                var tot_credits = document.getElementById("fe1_tot_credits").value;
+                var fe1_cgpa = tot_credits/tot_credits_obtained;
+                document.getElementById("fe1_cgpa").value = fe1_cgpa;
+            }
+            function calc_fe2cgpa()
+            {
+                var tot_credits_obtained = document.getElementById("fe2_tot_credits_obtained").value;
+                var tot_credits = document.getElementById("fe2_tot_credits").value;
+                var fe2_cgpa = tot_credits/tot_credits_obtained;
+                document.getElementById("fe2_cgpa").value = fe2_cgpa;
+            }
+            function calc_se1cgpa()
+            {
+                var tot_credits_obtained = document.getElementById("se1_tot_credits_obtained").value;
+                var tot_credits = document.getElementById("se1_tot_credits").value;
+                var se1_cgpa = tot_credits/tot_credits_obtained;
+                document.getElementById("se1_cgpa").value = se1_cgpa;
+            }
+            function calc_se2cgpa()
+            {
+                var tot_credits_obtained = document.getElementById("se2_tot_credits_obtained").value;
+                var tot_credits = document.getElementById("se2_tot_credits").value;
+                var se2_cgpa = tot_credits/tot_credits_obtained;
+                document.getElementById("se2_cgpa").value = se2_cgpa;
+            }
+            function calc_te1cgpa()
+            {
+                var tot_credits_obtained = document.getElementById("te1_tot_credits_obtained").value;
+                var tot_credits = document.getElementById("te1_tot_credits").value;
+                var te1_cgpa = tot_credits/tot_credits_obtained;
+                document.getElementById("te1_cgpa").value = te1_cgpa;
+            }
+            function calc_te2cgpa()
+            {
+                var tot_credits_obtained = document.getElementById("te2_tot_credits_obtained").value;
+                var tot_credits = document.getElementById("te2_tot_credits").value;
+                var te2_cgpa = tot_credits/tot_credits_obtained;
+                document.getElementById("te2_cgpa").value = te2_cgpa;
+            }
+            function calc_be1cgpa()
+            {
+                var tot_credits_obtained = document.getElementById("be1_tot_credits_obtained").value;
+                var tot_credits = document.getElementById("be1_tot_credits").value;
+                var be1_cgpa = tot_credits/tot_credits_obtained;
+                document.getElementById("be1_cgpa").value = be1_cgpa;
+            }
+            function calc_be2cgpa()
+            {
+                var tot_credits_obtained = document.getElementById("be2_tot_credits_obtained").value;
+                var tot_credits = document.getElementById("be2_tot_credits").value;
+                var be2_cgpa = tot_credits/tot_credits_obtained;
+                document.getElementById("be2_cgpa").value = be2_cgpa;
+            }
+
+
+        </script>
+{% endblock %}
+
+{% block body %}
+    <div class="limiter">
+            <div class="container-login100" style="background-image: url('/static/images/mmcoen.jpg');">
+                <div class="wrap-login100" style="width: 800px;">
+                    <form class="login100-form validate-form" method="post">
+                        {% csrf_token %}
+                        <span class="login100-form-title p-b-34 p-t-27">
+                            Student Registration
+                        </span>
+                        <h4 style="text-align: center">Step 3 - Enginnering Details</h4>
+                        <hr>
+                        <br>
+
+                        <table width="700">
+{#                                <tr>#}
+{#                                    <td>#}
+{#                                    <th style="font-family: Poppins-Regular; color: white">First Year</th>#}
+{#                                    </td>#}
+{#                                </tr>#}
+
+                                <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_fe1cgpa()" class="input100" type="number"  id ="fe1_tot_credits_obtained" name="fe1_tot_credits_obtained">
+                                        <span class="focus-input100" data-placeholder="fe1_tot_creds_obtained"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_fe1cgpa()" class="input100" type="number" id="fe1_tot_credits" name="fe1_tot_credits">
+                                        <span class="focus-input100" data-placeholder="fe1_tot_creds"></span>
+                                    </div>
+                                </td>
+                                <td>
+{#                                    <label for="fe1_cgpa">fe1_cgpa</label>#}
+                                    <div class="wrap-input100 validate-input">
+                                        <input  class="input100" type="number" id="fe1_cgpa" name="fe1_cgpa" readonly>
+                                        <span class="focus-input100" data-placeholder="fe1_cgpa"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_fe2cgpa()" class="input100" type="number" id="fe2_tot_credits_obtained" name="fe2_tot_credits_obtained">
+                                        <span class="focus-input100" data-placeholder="fe2_tot_creds_obtained"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_fe2cgpa()" class="input100" type="number" id="fe2_tot_credits" name="fe2_tot_credits">
+                                        <span class="focus-input100" data-placeholder="fe2_tot_creds"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" id="fe2_cgpa" name="fe2_cgpa" readonly>
+                                        <span class="focus-input100" data-placeholder="fe2_cgpa"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_se1cgpa()" class="input100" type="number" id="se1_tot_credits_obtained" name="se1_tot_credits_obtained">
+                                        <span class="focus-input100" data-placeholder="se1_tot_creds_obtained"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_se1cgpa()" class="input100" type="number" id="se1_tot_credits" name="se1_tot_credits">
+                                        <span class="focus-input100" data-placeholder="se1_tot_creds"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" id="se1_cgpa" name="se1_cgpa" readonly>
+                                        <span class="focus-input100" data-placeholder="se1_cgpa"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_se2cgpa()" class="input100" type="number" id="se2_tot_credits_obtained" name="se2_tot_credits_obtained">
+                                        <span class="focus-input100" data-placeholder="se2_tot_creds_obtained"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_se2cgpa()" class="input100" type="number" id="se2_tot_credits" name="se2_tot_credits">
+                                        <span class="focus-input100" data-placeholder="se2_tot_creds"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" id="se2_cgpa" name="se2_cgpa" readonly>
+                                        <span class="focus-input100" data-placeholder="se2_cgpa"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_te1cgpa()" class="input100" type="number" id="te1_tot_credits_obtained" name="te1_tot_credits_obtained">
+                                        <span class="focus-input100" data-placeholder="te1_tot_creds_obtained"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_te1cgpa()" class="input100" type="number" id="te1_tot_credits" name="te1_tot_credits">
+                                        <span class="focus-input100" data-placeholder="te1_tot_creds"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" id="te1_cgpa" name="te1_cgpa" readonly>
+                                        <span class="focus-input100" data-placeholder="te1_cgpa"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_te2cgpa()" class="input100" type="number" id="te2_tot_credits_obtained" name="te2_tot_credits_obtained">
+                                        <span class="focus-input100" data-placeholder="te2_tot_creds_obtained"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_te2cgpa()" class="input100" type="number" id="te2_tot_credits" name="te2_tot_credits">
+                                        <span class="focus-input100" data-placeholder="te2_tot_creds"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" id="te2_cgpa" name="te2_cgpa" readonly>
+                                        <span class="focus-input100" data-placeholder="te2_cgpa"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_be1cgpa()" class="input100" type="number" id="be1_tot_credits_obtained" name="be1_tot_credits_obtained">
+                                        <span class="focus-input100" data-placeholder="be1_tot_creds_obtained"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_be1cgpa()" class="input100" type="number" id="be1_tot_credits" name="be1_tot_credits">
+                                        <span class="focus-input100" data-placeholder="be1_tot_creds"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" id="be1_cgpa" name="be1_cgpa" readonly>
+                                        <span class="focus-input100" data-placeholder="be1_cgpa"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_be2cgpa()" class="input100" type="number" id="be2_tot_credits_obtained" name="be2_tot_credits_obtained">
+                                        <span class="focus-input100" data-placeholder="be2_tot_creds_obtained"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input onchange="calc_be2cgpa()" class="input100" type="number" id="be2_tot_credits" name="be2_tot_credits">
+                                        <span class="focus-input100" data-placeholder="be2_tot_creds"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" id="be2_cgpa" name="be2_cgpa" readonly>
+                                        <span class="focus-input100" data-placeholder="be2_cgpa"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="wrap-input100 validate-input">
+                                            <input class="input100" type="number" name="no_of_dead_kt">
+                                            <span class="focus-input100" data-placeholder="no_of_dead_kt"></span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0px 2px 0px 2px">
+                                        <div class="wrap-input100 validate-input">
+                                            <input class="input100" type="number" name="no_of_live_kt">
+                                            <span class="focus-input100" data-placeholder="no_of_live_kt"></span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="wrap-input100 validate-input">
+                                            <input class="input100" type="number" name="no_of_yd_engg">
+                                            <span class="focus-input100" data-placeholder="no_of_yd_engg"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="wrap-input100 validate-input">
+                                            <input class="input100" type="number" name="no_of_yd_diploma">
+                                            <span class="focus-input100" data-placeholder="no_of_yd_diploma"></span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0px 2px 0px 2px">
+                                        <div class="wrap-input100 validate-input">
+                                            <input class="input100" type="number" name="no_of_yg">
+                                            <span class="focus-input100" data-placeholder="no_of_yg"></span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="wrap-input100 validate-input">
+                                            <input class="input100" type="text" name="plan_after_engg">
+                                            <span class="focus-input100" data-placeholder="plan_after_engg"></span>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </table>
+
+                            <table >
+                                <tr>
+                                <td style="padding: 0px 2px 0px 90px">
+                                        <div class="wrap-input100 validate-input">
+                                            <input class="input100" type="text" name="te_mini_proj_company">
+                                            <span class="focus-input100" data-placeholder="te_mini_proj_company"></span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0px 2px 0px 2px">
+                                        <div class="wrap-input100 validate-input">
+                                            <input class="input100" type="text" name="te_mini_proj_title">
+                                            <span class="focus-input100" data-placeholder="te_mini_proj_title"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td style="padding: 0px 2px 0px 90px">
+                                        <div class="wrap-input100 validate-input">
+                                            <input class="input100" type="text" name="certification1">
+                                            <span class="focus-input100" data-placeholder="certification1"></span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0px 2px 0px 2px">
+                                        <div class="wrap-input100 validate-input">
+                                            <input class="input100" type="text" name="certification2">
+                                            <span class="focus-input100" data-placeholder="certification2"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td style="padding: 0px 2px 0px 90px">
+                                        <div class="wrap-input100 validate-input">
+                                            <input class="input100" type="text" name="AddOnCourse1">
+                                            <span class="focus-input100" data-placeholder="AddOnCourse1"></span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 0px 2px 0px 2px">
+                                        <div class="wrap-input100 validate-input">
+                                            <input class="input100" type="text" name="AddOnCourse2">
+                                            <span class="focus-input100" data-placeholder="AddOnCourse2"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                        <span style=" background: springgreen; border-radius: 5px; padding: 5px 15px 5px 15px">
+{#                                      <a>NEXT</a>#}
+{#                                      <input type="button" value="NEXT">#}
+                            <button>NEXT</button>
+                        </span>
+
+                        </form>
+                </div>
+		    </div>
+	    </div>
+
+{% endblock %}

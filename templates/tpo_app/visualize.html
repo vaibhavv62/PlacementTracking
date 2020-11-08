@@ -1,0 +1,32 @@
+{% extends "student_register/layout.html" %}
+{% load static %}
+
+    {% block title %}
+        <title>Visualize</title>
+    {% endblock %}
+
+    {% block css %}
+        <style>
+            #cssTable th,td
+            {
+                text-align: center;
+                vertical-align: middle;
+            }
+        </style>
+    {% endblock %}
+
+
+    {% block body %}
+        <div class="limiter">
+            <div class="container-login100" style="background-image: url('/static/images/mmcoen.jpg');">
+                <div class="wrap-login100" style="width:100%;">
+                    <h1>Hello Visualize</h1>
+
+                    <img src="{% static 'images/my_plot3.png' %}" alt="Not Found">
+                </div>
+		    </div>
+	    </div>
+
+
+    {% endblock %}
+

@@ -1,0 +1,236 @@
+{% extends "student_register/layout.html" %}
+
+    {% block title %}
+        <title>Register- Personal Details</title>
+    {% endblock %}
+
+    {% block body %}
+        <div class="limiter">
+            <div class="container-login100" style="background-image: url('/static/images/mmcoen.jpg');">
+                <div class="wrap-login100" style="width: 800px;">
+                    <form class="login100-form validate-form" method="post">
+                        {% csrf_token %}
+                        <span class="login100-form-title p-b-34 p-t-27">
+                            Student Registration
+                        </span>
+{#                        <span class="login100-form-logo p-b-34 p-t-0">#}
+                            <h4 style="text-align: center">Step 1 - Personal Details</h4>
+                        <br>
+{#                        </span>#}
+                        <br>
+{#                        <label for="id_fname">Fname:</label><br>#}
+                        <table>
+                            <tr>
+{#                                <td>#}
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid College Mail ID">
+                                        <input class="input100" type="email" name="clgid">
+                                        <span class="focus-input100" style="font-size: 18px" data-placeholder="College Mail Id" ></span>
+                                    </div>
+{#                                </td>#}
+                            </tr>
+
+                            <tr>
+
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Personal Mail ID">
+                                        <input class="input100" type="email" name="personal_email">
+                                        <span class="focus-input100" style="font-size: 18px" data-placeholder="Personal Mail Id" ></span>
+                                    </div>
+
+                            </tr>
+
+                            <tr>
+
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Parent Mail ID">
+                                        <input class="input100" type="email" name="parent_email">
+                                        <span class="focus-input100" style="font-size: 18px" data-placeholder="Parent Mail Id" ></span>
+                                    </div>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <div class="wrap-input100 validate-input" data-validate ="Enter Valid Aadhar No.">
+                                        <input class="input100" type="number" name="aadhar_no" min="100000000000" max="999999999999">
+                                        <span class="focus-input100" style="font-size: 18px" data-placeholder="aadhar_no" ></span>
+                                </div>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid First name">
+                                        <input class="input100" type="text" name="fname">
+                                        <span class="focus-input100" data-placeholder="First name"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Middle name">
+                                        <input class="input100" type="text" name="mname">
+                                        <span class="focus-input100" data-placeholder="Middle name"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Last name">
+                                        <input class="input100" type="text" name="lname">
+                                        <span class="focus-input100" data-placeholder="Last name"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <select class="input100" name="clg">
+                                            <option>College</option>
+                                            <option>MMCOE</option>
+                                            <option>MMIT</option>
+                                        </select>
+{#                                        <input class="input100" type="text" name="clg">#}
+                                        {#                                        <span class="focus-input100" data-placeholder="Enter College name"></span>#}
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid PRN">
+                                        <input class="input100" type="text" name="prn">
+                                        <span class="focus-input100" data-placeholder="PRN"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+{#                                        <input class="input100" type="text" name="branch">#}
+{#                                        <span class="focus-input100" data-placeholder="Branch"></span>#}
+                                        <select class="input100" name="branch">
+                                            <option>Branch</option>
+                                            <option>Computer</option>
+                                            <option>Mechanical</option>
+                                            <option>IT</option>
+                                            <option>EnTC</option>
+                                            <option>Electrical</option>
+                                        </select>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input">
+                                        <select class="input100" name="gender">
+                                            <option>Gender</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Not to say</option>
+                                        </select>
+{#                                        <input class="input100" type="text" name="clg">#}
+                                        {#                                        <span class="focus-input100" data-placeholder="Enter College name"></span>#}
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Native Place">
+                                        <input class="input100" type="text" name="np">
+                                        <span class="focus-input100" data-placeholder="Native Place"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Date of Birth">
+                                        <input class="input100" type="text" name="dob">
+                                        <span class="focus-input100" data-placeholder="Date of Birth"></span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Mother Tounge">
+                                        <input class="input100" type="text" name="mt">
+                                        <span class="focus-input100" data-placeholder="Mother Tounge"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <select class="input100" name="other_lang">
+                                            <option>Other Language</option>
+                                            <option>German</option>
+                                            <option>French</option>
+                                            <option>Japanese</option>
+                                            <option>Chinese</option>
+                                            <option>Spanish</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Mobile No">
+                                        <input class="input100" type="number" name="mono1">
+                                        <span class="focus-input100" data-placeholder="Mobile No"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Alternate Mobile No">
+                                        <input class="input100" type="number" name="mono2">
+                                        <span class="focus-input100" data-placeholder="Alternate Mobile No"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Parent Mobile No">
+                                        <input class="input100" type="number" name="parent_mono1">
+                                        <span class="focus-input100" data-placeholder="Parent Mobile No"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Parent Mobile No2">
+                                        <input class="input100" type="number" name="parent_mono2">
+                                        <span class="focus-input100" data-placeholder="Parent Mobile No2"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                        </table>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                        <span style=" background: springgreen; border-radius: 5px; padding: 5px 15px 5px 15px">
+{#                                      <a>NEXT</a>#}
+{#                                      <input type="button" value="NEXT">#}
+                            <button>NEXT</button>
+                        </span>
+
+{##}
+
+                        <br>
+
+
+
+                        <br>
+
+
+
+
+
+
+
+
+
+{#                        {{ regform }}#}
+                    </form>
+                </div>
+		    </div>
+	    </div>
+    {% endblock %}

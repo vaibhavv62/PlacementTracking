@@ -1,0 +1,27 @@
+body {
+    background-color:springgreen;
+}
+
+ div{
+     border-color:black;
+     border-width:thick;
+     border-style:solid;
+     border-bottom-left-radius:30px;
+     border-bottom-right-radius: 30px;
+     border-top-left-radius: 30px;
+     border-top-right-radius: 30px;
+     border-right-width: 10px;
+     border-left-width: 10px;
+     /*padding-bottom: 10px;*/
+     /*padding-top: 10px;*/
+     /*padding-left: 10px;*/
+     /*padding-right: 10px;*/
+     width: 500px;
+     margin: auto;
+     background-color:hotpink;
+ }
+
+ p{
+     color: black;
+     /*background: green;*/
+     }

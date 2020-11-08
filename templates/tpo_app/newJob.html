@@ -1,0 +1,225 @@
+{% extends "student_register/layout.html" %}
+
+    {% block title %}
+        <title>Post New Job</title>
+    {% endblock %}
+
+    {% block css %}
+        <style>
+             table.center
+             {
+                margin-left:auto;
+                margin-right:auto;
+             }
+        </style>
+    {% endblock %}
+
+    {% block body %}
+        <div class="limiter">
+            <div class="container-login100" style="background-image: url('/static/images/mmcoen.jpg');">
+                <div class="wrap-login100" style="width: 800px;">
+                    <form class="login100-form validate-form" method="post">
+                        {% csrf_token %}
+                        <span class="login100-form-title p-b-34 p-t-27">
+                            Post New Job
+                        </span>
+{#                        <span class="login100-form-logo p-b-34 p-t-0">#}
+{#                            <h4 style="text-align: center">Step 1 - Personal Details</h4>#}
+                        <br>
+{#                        </span>#}
+                        <br>
+{#                        <label for="id_fname">Fname:</label><br>#}
+
+                        <table>
+                            <tr>
+                                <div class="wrap-input100 validate-input" data-validate ="Enter Valid Company Name">
+                                        <input class="input100" type="text" name="company">
+                                        <span class="focus-input100" style="font-size: 18px" data-placeholder="Name of the Organization" ></span>
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="wrap-input100 validate-input" data-validate ="Enter Valid Registration Link">
+                                        <input class="input100" type="text" name="reg_link">
+                                        <span class="focus-input100" data-placeholder="reg_link"></span>
+                                </div>
+                            </tr>
+                        </table>
+                        <table class="center">
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Campus Date">
+                                        <input class="input100" type="date" name="date_of_campus">
+                                        <span class="focus-input100" data-placeholder="Campus Date"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid campus Venue">
+                                        <input class="input100" type="text" name="campus_venue">
+                                        <span class="focus-input100" data-placeholder="campus Venue"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Job Location">
+                                        <input class="input100" type="text" name="job_loc">
+                                        <span class="focus-input100" style="font-size: 18px" data-placeholder="Job Location" ></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Job Position">
+                                        <input class="input100" type="text" name="job_pos">
+                                        <span class="focus-input100" style="font-size: 18px" data-placeholder="Job Position" ></span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid CTC Offered">
+                                        <input class="input100" type="text" name="ctc_offered">
+                                        <span class="focus-input100" style="font-size: 18px" data-placeholder="CTC Offered" ></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Service Aggrement in Yrs">
+                                        <input class="input100" type="number" name="service_agg">
+                                        <span class="focus-input100" style="font-size: 18px" data-placeholder="ServiceAggrementInYrs" ></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Skills Required">
+                                        <input class="input100" type="text" name="skills_req">
+                                        <span class="focus-input100" data-placeholder="Skills Required"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Selection Procedure">
+                                        <input class="input100" type="text" name="selection_proc">
+                                        <span class="focus-input100" data-placeholder="Selection Procedure"></span>
+                                    </div>
+                                </td>
+
+
+                            </tr>
+
+
+
+
+                            <tr>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Age">
+                                        <input class="input100" type="number" name="age">
+                                        <span class="focus-input100" data-placeholder="Max. Age"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid Passing Year">
+                                        <input class="input100" type="text" name="passing_yr">
+                                        <span class="focus-input100" data-placeholder="Passing Year"></span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid xth_percentage">
+                                        <input class="input100" type="text" name="xth_percentage">
+                                        <span class="focus-input100" data-placeholder="Min. xth_percentage"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid xiith_percentage">
+                                        <input class="input100" type="text" name="xiith_percentage">
+                                        <span class="focus-input100" data-placeholder="Min. xiith_percentage"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid diploma_percentage">
+                                        <input class="input100" type="text" name="diploma_percentage">
+                                        <span class="focus-input100" data-placeholder="Min. diploma_percentage"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid engg_cgpa">
+                                        <input class="input100" type="text" name="engg_cgpa">
+                                        <span class="focus-input100" data-placeholder="Min. engg_cgpa"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid no_of_dead_kt">
+                                        <input class="input100" type="number" name="no_of_dead_kt">
+                                        <span class="focus-input100" data-placeholder="Max. no_of_dead_kt"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid no_of_live_kt">
+                                        <input class="input100" type="number" name="no_of_live_kt">
+                                        <span class="focus-input100" data-placeholder="Max. no_of_live_kt"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid no_of_yg">
+                                        <input class="input100" type="number" name="no_of_yg">
+                                        <span class="focus-input100" data-placeholder="Max. no_of_yg"></span>
+                                    </div>
+                                </td>
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input" data-validate ="Enter Valid date_of_joining">
+                                            <input class="input100" type="date" name="date_of_joining">
+                                            <span class="focus-input100" style="font-size: 18px" data-placeholder="Joining Date" ></span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+{#                        <br><br>#}
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                        <span style=" background: springgreen; border-radius: 5px; padding: 5px 15px 5px 15px">
+{#                                      <a>NEXT</a>#}
+{#                                      <input type="button" value="NEXT">#}
+                            <button>NEXT</button>
+                        </span>
+
+{##}
+
+                        <br>
+
+
+
+                        <br>
+
+
+
+
+
+
+
+
+
+{#                        {{ regform }}#}
+                    </form>
+                </div>
+		    </div>
+	    </div>
+    {% endblock %}

@@ -1,0 +1,179 @@
+{% extends "student_register/layout.html" %}
+
+{% block title %}
+    <title>Register- Academic Details</title>
+{% endblock %}
+
+
+
+
+{% block body %}
+        <div class="limiter">
+            <div class="container-login100" style="background-image: url('/static/images/mmcoen.jpg');">
+                <div class="wrap-login100" style="width: 800px;">
+                    <form class="login100-form validate-form" method="post">
+                        {% csrf_token %}
+                        <span class="login100-form-title p-b-34 p-t-27">
+                            Student Registration
+                        </span>
+                        <h4 style="text-align: center">Step 2 - Academic Details</h4>
+                        <hr>
+                        <br>
+
+                        <table>
+
+                            <tr>
+
+                                <td style="padding: 0px 2px 0px 90px">
+{#                                    <div class="wrap-input100 validate-input">#}
+{#                                        <input class="input100" type="text" name="xth_board">#}
+{#                                        <span class="focus-input100" data-placeholder="xth_board"></span>#}
+{#                                    </div>#}
+                                    <div class="wrap-input100 validate-input">
+                                        <select class="input100" name="xth_board">
+                                            <option>xth_board</option>
+                                            <option>State Board</option>
+                                            <option>CBSE</option>
+                                            <option>ICSE</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                </td>
+
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" name="xth_passing_yr">
+                                        <span class="focus-input100" data-placeholder="Passing Year"></span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+
+                                <td style="padding: 0px 2px 0px 90px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" step="0.0001" name="xth_marks_obtained">
+                                        <span class="focus-input100" data-placeholder="Marks Obtained"></span>
+                                    </div>
+                                </td>
+
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" name="xth_marks_outoff">
+                                        <span class="focus-input100" data-placeholder="Outoff"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+
+
+
+                            <tr>
+
+                                <td style="padding: 0px 2px 0px 90px">
+{#                                    <div class="wrap-input100 validate-input">#}
+{#                                        <input class="input100" type="text" name="xiith_board">#}
+{#                                        <span class="focus-input100" data-placeholder="xiith_board"></span>#}
+{#                                    </div>#}
+                                    <div class="wrap-input100 validate-input">
+                                        <select class="input100" name="xiith_board">
+                                            <option>xiith_board</option>
+                                            <option>State Board</option>
+                                            <option>CBSE</option>
+                                            <option>ICSE</option>
+                                            <option>Other</option>
+                                            <option>NA</option>
+                                        </select>
+                                    </div>
+                                </td>
+
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" name="xiith_passing_yr">
+                                        <span class="focus-input100" data-placeholder="Passing Year"></span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+
+                                <td style="padding: 0px 2px 0px 90px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" name="xiith_marks_obtained">
+                                        <span class="focus-input100" data-placeholder="Marks Obtained"></span>
+                                    </div>
+                                </td>
+
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" name="xiith_marks_outoff">
+                                        <span class="focus-input100" data-placeholder="Outoff"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+
+
+                            <tr>
+
+                                <td style="padding: 0px 2px 0px 90px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="text" name="diploma_clg">
+                                        <span class="focus-input100" data-placeholder="diploma_clg"></span>
+                                    </div>
+                                </td>
+
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" name="diploma_passing_yr">
+                                        <span class="focus-input100" data-placeholder="Passing Year"></span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+
+                                <td style="padding: 0px 2px 0px 90px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" name="diploma_marks_obtained">
+                                        <span class="focus-input100" data-placeholder="Marks Obtained"></span>
+                                    </div>
+                                </td>
+
+                                <td style="padding: 0px 2px 0px 2px">
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="number" name="diploma_marks_outoff">
+                                        <span class="focus-input100" data-placeholder="Outoff"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                        <span style=" background: springgreen; border-radius: 5px; padding: 5px 15px 5px 15px">
+{#                                      <a>NEXT</a>#}
+{#                                      <input type="button" value="NEXT">#}
+                            <button>NEXT</button>
+                        </span>
+
+
+                    </form>
+                </div>
+		    </div>
+	    </div>
+{% endblock %}
