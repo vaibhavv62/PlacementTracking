@@ -1,5 +1,8 @@
 import datetime
 
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
@@ -257,21 +260,49 @@ def student_delete(request):
         print(f"Data got from frontend is {dt}")
         return HttpResponse(f"{dt}")
 
+def student_signupView(request):
+    if request.method == 'GET':
+        regForm = UserCreationForm()
+    else:
+        regForm = UserCreationForm(request.POST)
+        if regForm.is_valid():
+            regForm.save()
+            return redirect('stulogin')
+    context = {"form": regForm}
+    template_name = "student_register/signup.html"
+    return render(request, template_name, context)
 
 def student_login(request):
+    dt = datetime.datetime.now()
     if request.method == "GET":
-        print("GET request method for login page")
-        dt = datetime.datetime.now()
-        # print(dt, type(dt))
-        context = {"dt":dt}
-        template_name = "student_register/index.html"
-        return render(request, template_name, context)
+        print("GET request method for stulogin page")
     else:
-        print("POST request method for login page")
+        print("POST request method for stulogin page")
         un = request.POST['un']
         pw = request.POST['pw']
-        print(f"Data got from frontend is {un} and {pw}")
-        return HttpResponse(f"{un} you are Logged In!")
+        if un == 'tpo':
+            print('Username is tpo, redirecting to tpo_login')
+            return redirect('tpo_login')
+        user = authenticate(username=un,password=pw)
+        if user is not None:
+            print('Valid user, logging in')
+            login(request,user)
+            return redirect('alljobs')
+        else:
+            print('Invalid Credentials')
+            messages.error(request,'Invalid Credentials')
+
+    context = {"dt": dt}
+    template_name = "student_register/index.html"
+    return render(request, template_name, context)
+    return HttpResponse(f"{un} you are Logged In!")
+
+def student_logout(request):
+    logout(request)
+    return redirect('stulogin')
+
+
+
 
 def all_jobs(request):
     print("GET request method for all_jobs")

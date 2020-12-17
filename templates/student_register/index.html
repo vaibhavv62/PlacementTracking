@@ -35,19 +35,30 @@
                                 Remember me
                             </label>
                         </div> -->
+                        {% for msg in messages %}
+                            <h5 style="color: white">{{ msg }}</h5>
+                        {% endfor %}
+                        <br>
 
                         <div class="container-login100-form-btn">
                             <button class="login100-form-btn">
                                 Login
                             </button>
                         </div>
-
                         <div class="text-center p-t-20">
-                            <a class="txt1" href="#">
-                                Forgot Password?
+                            <a class="txt1" href="{% url 'signup' %}">
+                                Create New Account?
                             </a>
                         </div>
                     </form>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <a href="{% url 'tpo_login' %}">
+                        <button class="login100-form-btn">
+                            TPO Login
+                        </button>
+                    </a>
                 </div>
 		    </div>
 	    </div>

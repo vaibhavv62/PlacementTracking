@@ -1,24 +1,54 @@
-{% extends "student_register/base.html" %}
+{% extends "student_register/layout.html" %}
 
-{% block content %}
-    {% for stu in user %}
-        {{ stu.branch }}<hr>
-        {{ stu.aadhar_no }}<hr>
-        {{ stu.AddOnCourse1 }}<hr>
-        {{ stu.AddOnCourse2 }}<hr>
-        {{ stu.certification1 }}<hr>
-        {{ stu.certification2 }}<hr>
-        {{ stu.clg }}<hr>
-        {{ stu.clg_email }}<hr>
-        {{ stu.dob }}<hr>
-        {{ stu.fname }}<hr>
-        {{ stu.mname }}<hr>
-        {{ stu.lname }}<hr>
-        {{ stu.gender }}<hr>
-        {{ stu.mono1 }}<hr>
-        {{ stu.mono2 }}<hr>
-        {{ stu.personal_email }}<hr>
-        {{ stu.xth_marks_obtained }}<hr>
-    {% endfor %}
-    studentlist.html
-{% endblock content %}
+{% block title %}
+        <title>All Students</title>
+{% endblock %}
+
+{% block body %}
+
+    <div class="limiter">
+
+            <div class="container-login100" style="background-image: url('/static/images/mmcoen.jpg');">
+
+                <div class="wrap-login100" style="width:100%;">
+                    <table style="width: 190%">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="container-login100-form-btn">
+                                    <a href="{% url 'stu_logout' %}" >
+                                        <button class="login100-form-btn">
+                                            LogOut
+                                        </button>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <span class="login100-form-title p-b-34 p-t-27">
+                            All Students
+                    </span>
+                    <table class="table table-striped">
+                        <thead>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Mobile No</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </thead>
+                        {% for stu in user %}
+                            <tr>
+                                <td>{{ stu.id }}</td>
+                                <td>{{ stu.fname }} {{ stu.lname }}</td>
+                                <td>{{ stu.mono1 }}</td>
+                                <td><a><button class="btn btn-warning">Update</a></button></td>
+                                <td><a><button class="btn btn-danger">Delete</a></button></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+		    </div>
+	    </div>
+{% endblock body %}

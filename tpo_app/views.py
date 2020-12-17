@@ -1,5 +1,7 @@
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import datetime
 
 # Create your views here.
@@ -9,10 +11,35 @@ from tpo_app.models import Jobs
 
 def tpo_login(request):
     dt = datetime.datetime.now()
-    print(dt, type(dt))
-    context = {"dt":dt}
+    if request.method == "GET":
+        print("GET request method for tpo_login page")
+    else:
+        print("POST request method for tpo_login page")
+        un = request.POST['un']
+        pw = request.POST['pw']
+        print(un)
+        if un == 'tpo':
+            user = authenticate(username=un, password=pw)
+            if user is not None:
+                print('Valid user, logging in')
+                login(request, user)
+                return redirect('allstudents')
+                # return redirect('alljobs')
+            else:
+                print('Invalid Credentials')
+                messages.error(request, 'Invalid Credentials')
+        else:
+            print('Username is tpo redirecting to student login')
+            return redirect('stulogin')
+
+    context = {"dt": dt}
     template_name = "tpo_app/tpoLogin.html"
     return render(request, template_name, context)
+    return HttpResponse(f"{un} you are Logged In!")
+
+def tpo_logout(request):
+    logout(request)
+    return redirect('tpo_login')
 
 def all_students(request):
     students = StudentProfile.objects.all()
@@ -64,7 +91,8 @@ def post_new_job(request):
         j.date_of_joining = request.POST['date_of_joining']
         j.save()
         print("New job added in the database succesfully..")
-        return HttpResponse("Done")
+        # return HttpResponse("Done")
+        return redirect('alljobs')
 
 
 def visualize(request):

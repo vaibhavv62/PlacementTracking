@@ -20,10 +20,27 @@
         <div class="limiter">
             <div class="container-login100" style="background-image: url('/static/images/mmcoen.jpg');">
                 <div class="wrap-login100" style="width:100%;">
+                    <table style="width: 190%">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="container-login100-form-btn">
+                                    <a href="{% url 'stu_logout' %}" >
+                                        <button class="login100-form-btn">
+                                            LogOut
+                                        </button>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
                     <span class="login100-form-title p-b-34 p-t-27">
                             Jobs Posted by TPO
                     </span>
-                    <table border="1" width="100%" id="cssTable">
+
+                    <table class="table table-striped">
                         <thead>
                             <th>Name of the Organization</th>
                             <th>Job Designation (Position)</th>
@@ -35,10 +52,15 @@
                             <th>Max. no of live kt</th>
                             <th>Max. no of year gap</th>
                             <th>Last Date to Apply</th>
-                            <th>&nbsp;&nbsp;Registration Link&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            {% if user.username == 'tpo' %}
+                                <th>Update</th>
+                                <th>Delete</th>
+                            {% else %}
+                                <th>&nbsp;&nbsp;Registration Link&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            {% endif %}
                         </thead>
                         {% for job in jobs %}
-                    {{ current_date }}{{ job.date_of_campus }}
+{#                    {{ current_date }}{{ job.date_of_campus }}#}
                             <tr>
                                 <td>{{ job.company }}</td>
                                 <td>{{ job.job_pos }}</td>
@@ -49,13 +71,18 @@
                                 <td>{{ job.no_of_yg }}</td>
                                 <td>{{ job.date_of_campus }}</td>
 {#                                <td>{{ job.reg_link }} </a></td>#}
-                                <td>
+                                {% if user.username == 'tpo' %}
+                                    <td><a><button class="btn btn-warning">Update</button></a></td>
+                                    <td><a><button class="btn btn-danger">Delete</button></a></td>
+                                {% else %}
+                                    <td>
                                     <span style=" background: springgreen; border-radius: 5px; padding: 0px 5px 0px 5px">
                                         <a href="//{{ job.reg_link }}/">
                                             <button>Apply Now!</button>
                                         </a>
                                     </span>
-                                </td>
+                                    </td>
+                                {% endif %}
                             </tr>
                         {% endfor %}
                     </table>
