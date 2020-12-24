@@ -1,0 +1,38 @@
+{% extends "student_register/layout.html" %}
+{% load crispy_forms_tags %}
+
+    {% block title %}
+        <title>Post New Job</title>
+    {% endblock %}
+
+    {% block css %}
+        <style>
+             table.center
+             {
+                margin-left:auto;
+                margin-right:auto;
+             }
+        </style>
+    {% endblock %}
+
+    {% block body %}
+        <div class="limiter">
+            <div class="container-login100" style="background-image: url('/static/images/mmcoen.jpg');">
+                <div class="wrap-login100" style="width: 800px;">
+                    <form class="login100-form validate-form" method="post">
+                        {% csrf_token %}
+                        <span class="login100-form-title p-b-34 p-t-27">
+                            Post New Job
+                        </span>
+                        <br>
+                        <br>
+                        {{ form|crispy }}
+                        <button type="submit" class="btn btn-success">
+                            POST
+                        </button>
+
+                    </form>
+                </div>
+		    </div>
+	    </div>
+    {% endblock %}

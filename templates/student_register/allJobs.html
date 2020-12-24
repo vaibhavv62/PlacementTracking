@@ -20,18 +20,36 @@
         <div class="limiter">
             <div class="container-login100" style="background-image: url('/static/images/mmcoen.jpg');">
                 <div class="wrap-login100" style="width:100%;">
-                    <table style="width: 190%">
+                    <table style="width: 100%">
                         <tr>
-                            <td></td>
-                            <td></td>
                             <td>
                                 <div class="container-login100-form-btn">
-                                    <a href="{% url 'stu_logout' %}" >
-                                        <button class="login100-form-btn">
-                                            LogOut
+                                </div>
+                            </td>
+
+                            {% if user.username == "tpo" %}
+                            <td>
+                                <div class="container-login100-form-btn">
+                                    <a href="{% url 'new_job' %}" >
+                                        <button class="login100-form-btn" >
+                                            Add New Job
                                         </button>
                                     </a>
                                 </div>
+                            </td>
+                            {% endif %}
+                            <td>
+                                <div class="container-login100-form-btn">
+                                    {% if user.username != "tpo" %}
+                                        <a href="{% url 'stu_logout' %}" >
+                                    {% else %}
+                                        <a href="{% url 'tpo_logout' %}" >
+                                    {% endif %}
+                                </div>
+                                    <button class="login100-form-btn">
+                                        LogOut
+                                    </button>
+                                </a>
                             </td>
                         </tr>
                     </table>
@@ -52,7 +70,7 @@
                             <th>Max. no of live kt</th>
                             <th>Max. no of year gap</th>
                             <th>Last Date to Apply</th>
-                            {% if user.username == 'tpo' %}
+                            {% if user.username == "tpo" %}
                                 <th>Update</th>
                                 <th>Delete</th>
                             {% else %}
@@ -72,15 +90,16 @@
                                 <td>{{ job.date_of_campus }}</td>
 {#                                <td>{{ job.reg_link }} </a></td>#}
                                 {% if user.username == 'tpo' %}
-                                    <td><a><button class="btn btn-warning">Update</button></a></td>
-                                    <td><a><button class="btn btn-danger">Delete</button></a></td>
+                                    <td><a href="{% url 'update_job' job.id %}"><button class="btn btn-warning">Update</button></a></td>
+                                    <td><a href="{% url 'delete_job' job.id %}"><button class="btn btn-danger">Delete</button></a></td>
                                 {% else %}
                                     <td>
-                                    <span style=" background: springgreen; border-radius: 5px; padding: 0px 5px 0px 5px">
-                                        <a href="//{{ job.reg_link }}/">
-                                            <button>Apply Now!</button>
-                                        </a>
-                                    </span>
+{#                                    <span style=" background: springgreen; border-radius: 5px; padding: 0px 5px 0px 5px">#}
+{#                                        <a href="//{{ job.reg_link }}/">#}
+{#                                            <button>Apply Now!</button>#}
+{#                                        </a>#}
+{#                                    </span>#}
+                                    <a href="//{{ job.reg_link }}/"><button class="btn btn-success">Apply Now</button></a>
                                     </td>
                                 {% endif %}
                             </tr>

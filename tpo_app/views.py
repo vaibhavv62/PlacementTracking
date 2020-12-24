@@ -1,15 +1,17 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 import datetime
 
 # Create your views here.
 from student_register.models import StudentProfile
+from .forms import JobsModelForm
 from tpo_app.models import Jobs
 
 
-def tpo_login(request):
+def tpo_login_view(request):
     dt = datetime.datetime.now()
     if request.method == "GET":
         print("GET request method for tpo_login page")
@@ -23,8 +25,8 @@ def tpo_login(request):
             if user is not None:
                 print('Valid user, logging in')
                 login(request, user)
-                return redirect('allstudents')
-                # return redirect('alljobs')
+                # return redirect('allstudents')
+                return redirect('alljobs')
             else:
                 print('Invalid Credentials')
                 messages.error(request, 'Invalid Credentials')
@@ -37,17 +39,17 @@ def tpo_login(request):
     return render(request, template_name, context)
     return HttpResponse(f"{un} you are Logged In!")
 
-def tpo_logout(request):
+def tpo_logout_view(request):
     logout(request)
     return redirect('tpo_login')
 
-def all_students(request):
+def all_students_view(request):
     students = StudentProfile.objects.all()
     context = {'students':students}
     template_name = "tpo_app/allStudents.html"
     return render(request, template_name, context)
 
-def student_full_profile(request):
+def student_full_profile_view(request):
     student = StudentProfile.objects.get(prn='71717219J')
     di = student.__dict__
     di.pop('_state')
@@ -55,6 +57,8 @@ def student_full_profile(request):
     template_name = "tpo_app/studentFullProfile.html"
     return  render(request,template_name,context)
 
+'''
+@login_required(login_url='tpo_login')
 def post_new_job(request):
     # context = {}
     # template_name = "tpo_app/newJob.html"
@@ -93,6 +97,38 @@ def post_new_job(request):
         print("New job added in the database succesfully..")
         # return HttpResponse("Done")
         return redirect('alljobs')
+'''
+def post_new_job_view(request):
+    if request.method == 'GET':
+        form = JobsModelForm()
+        context = {'form':form}
+        template_name = "tpo_app/newJob1.html"
+        return render(request,template_name,context)
+    elif request.method == 'POST':
+        form = JobsModelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            print("New job added in the database succesfully..")
+            # return HttpResponse("Done")
+            return redirect('alljobs')
+
+def update_job_view(request,id):
+    job_obj = Jobs.objects.get(id=id)
+    if request.method == 'GET':
+        form = JobsModelForm(instance=job_obj)
+        context = {'form': form}
+        template_name = "tpo_app/newJob1.html"
+        return render(request, template_name, context)
+    elif request.method == 'POST':
+        form = JobsModelForm(request.POST, instance=job_obj)
+        if form.is_valid():
+            form.save()
+            return redirect('alljobs')
+
+def delete_job_view(request,id):
+    job_obj = Jobs.objects.get(id=id)
+    job_obj.delete()
+    return redirect('alljobs')
 
 
 def visualize(request):
